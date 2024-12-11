@@ -44,4 +44,6 @@ Thumbs.db
 
 # secret
 /environments
-environments*
+**/environments
+/environments/**
+environments**
