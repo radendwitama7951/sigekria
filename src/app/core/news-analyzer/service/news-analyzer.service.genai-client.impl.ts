@@ -67,7 +67,7 @@ const genAIResponseSchema = {
 @Injectable({
   providedIn: 'root',
 })
-export class NewsAnalyzerServiceImpl implements NewsAnalyzerService {
+export class NewsAnalyzerServiceGenaiClientImpl implements NewsAnalyzerService {
   private readonly platform = inject(PLATFORM_ID);
 
   private readonly model = genAI.getGenerativeModel({

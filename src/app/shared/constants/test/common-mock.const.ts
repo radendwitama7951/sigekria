@@ -28,7 +28,7 @@ export class CommonMock {
     id: this.VALID_ID,
     title: 'Some News Title',
     publicationDate: '2024-12-10 14:25',
-    author: this.VALID_NEWS_AUTHOR,
+    authors: this.VALID_NEWS_AUTHOR,
     sourceUrl: this.VALID_URL,
     content: this.NEWS_CONTENT,
     summary: this.NEWS_SUMMARY,

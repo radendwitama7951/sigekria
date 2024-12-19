@@ -11,18 +11,19 @@ import { NewsAnalyzerResultComponent } from './components/news-analyzer-result.c
 import { NewsAnalyzerHistoryListComponent } from './components/news-analyzer-history-list.component';
 import { NewsContent } from '../../core/news-analyzer/abstract/news-content.type';
 import { CommonMock } from '../../shared/constants/test/common-mock.const';
-import { NewsAnalyzerServiceImpl } from '../../core/news-analyzer/service/news-analyzer.service.impl';
 import { distinctUntilChanged, filter, map, Observable, of, tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { filterResultOk, resultMap } from 'ts-results/rxjs-operators';
 import { rxResource, toSignal } from '@angular/core/rxjs-interop';
 import { AppLoadingSpinnerComponent } from '../../shared/components/app-loading-spinner.component';
 import { NewsContentStore } from '../../core/news-analyzer/service/news-content.service.ngrx-signals.impl';
+import { NewsAnalyzerServiceFastapiStreamImpl } from '../../core/news-analyzer/service/news-analyzer.service.fastapi-stream.impl';
+import { NewsAnalyzerService } from '../../core/news-analyzer/abstract/news-analyzer.service.abstract';
 
 const emptyNewsContent: NewsContent = {
   id: '',
   title: '',
-  author: '',
+  authors: '',
   content: '',
   publicationDate: '',
   sourceUrl: '',
@@ -141,7 +142,7 @@ const emptyNewsContent: NewsContent = {
   providers: [NewsContentStore],
 })
 export class NewsAnalyzerComponent {
-  private readonly newsAnalyzerService = inject(NewsAnalyzerServiceImpl);
+  private readonly newsAnalyzerService = inject(NewsAnalyzerService);
   // private readonly appDBService = inject(AppDBService);
   private readonly newsContentStore = inject(NewsContentStore);
 

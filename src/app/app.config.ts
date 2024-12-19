@@ -12,7 +12,7 @@ import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { initDatabase } from './core/app-db/service/app-db.service.ts.service';
 
 export const appConfig: ApplicationConfig = {
@@ -21,7 +21,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withPreloading(NoPreloading)),
     provideClientHydration(withEventReplay()),
 
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     // provideAppInitializer(() => initDatabase(inject(Injector))),
   ],
 };

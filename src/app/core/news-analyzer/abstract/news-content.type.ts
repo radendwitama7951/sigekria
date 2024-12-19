@@ -3,7 +3,7 @@ import { IdType } from '../../type/id.type';
 export interface NewsContent {
   id: IdType;
   title: string;
-  author: string;
+  authors: string;
   publicationDate: string;
   content: string;
   sourceUrl: string;
